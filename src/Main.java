@@ -1,8 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        int [] arrayIntegers={10,3,4,5};
+        int [] arrayIntegers={10,3,4,-6,5};
 
         difference(arrayIntegers);
+
+        moreSmalls(arrayIntegers);
 
 
     }
@@ -19,6 +21,25 @@ public class Main {
         System.out.println("Minimum: "+min);
         System.out.println("maximum: "+max);
         System.out.println("Difference: "+ (max-min));
+    }
+
+    public static void moreSmalls(int[] array){
+        int min1=array[0];
+        int min2=array[0];
+        for(int n: array){
+            if(n<=min1){
+                min1=n;
+            }
+        }
+        for(int n: array){
+            if(n!=min1){
+                if(n<=min2){
+                    min2=n;
+                }
+            }
+        }
+        System.out.println("Minimum 1: "+min1);
+        System.out.println("Minimum 2: "+min2);
     }
 
 
