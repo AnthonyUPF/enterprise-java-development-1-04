@@ -1,10 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-        int [] arrayIntegers={10,3,4,-6,5};
+        int [] array={10,3,4,-6,5};
 
-        difference(arrayIntegers);
+        difference(array);
 
-        moreSmalls(arrayIntegers);
+        moreSmalls(array);
+
+        double x=5;
+        double y=1;
+        solution(x,y);
 
 
     }
@@ -28,18 +32,19 @@ public class Main {
         int min2=array[0];
         for(int n: array){
             if(n<=min1){
+                min2=min1;
                 min1=n;
-            }
-        }
-        for(int n: array){
-            if(n!=min1){
-                if(n<=min2){
-                    min2=n;
-                }
+            }else if(n<=min2 && min2!=min1){
+                min2=n;
             }
         }
         System.out.println("Minimum 1: "+min1);
         System.out.println("Minimum 2: "+min2);
+    }
+
+    public static void solution(double x, double y){
+        double R=Math.pow(x,2.)+Math.pow((4*y/5)-x,2.);
+        System.out.println("The solution with x= "+x+" and y= "+y+" is "+R);
     }
 
 
